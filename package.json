@@ -1,5 +1,5 @@
 {
-  "name": "with-mdx-remote",
+  "name": "redxzeta-blog",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -8,6 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.5.0",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^4",
     "gray-matter": "^4.0.2",
     "next": "^10.0.6",
     "next-mdx-remote": "^2.1.3",
