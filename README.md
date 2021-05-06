@@ -5,6 +5,7 @@ This example shows how a simple blog might be built using the [next-mdx-remote](
 The example also showcases [next-remote-watch](https://github.com/hashicorp/next-remote-watch), a library that allows next.js to watch files outside the `pages` folder that are not explicitly imported, which enables the mdx content here to trigger a live reload on change.
 
 Since `next-remote-watch` uses undocumented Next.js APIs, it doesn't replace the default `dev` script for this example. To use it, run `npm run dev:watch` or `yarn dev:watch`.
+test
 
 ## Deploy your own
 
@@ -33,21 +34,21 @@ When using `next-mdx-remote`, you can pass custom components to the MDX renderer
 For example, here's how you can change `getStaticProps` to conditionally add certain components:
 
 ```js
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
 // ...
 
 export async function getStaticProps() {
-  const { content, data } = matter(source)
+  const { content, data } = matter(source);
 
   const components = {
     ...defaultComponents,
     SomeHeavyComponent: /<SomeHeavyComponent/.test(content)
-      ? dynamic(() => import('SomeHeavyComponent'))
+      ? dynamic(() => import("SomeHeavyComponent"))
       : null,
-  }
+  };
 
-  const mdxSource = await renderToString(content, { components })
+  const mdxSource = await renderToString(content, { components });
 }
 ```
 
